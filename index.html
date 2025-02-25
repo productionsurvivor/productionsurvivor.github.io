@@ -36,6 +36,10 @@
         .cta-button:hover {
             background-color: #333;
         }
+        #quiz-container {
+            display: none; /* Hide quiz initially */
+            margin-top: 30px;
+        }
     </style>
 </head>
 <body>
@@ -46,14 +50,19 @@
         <p>In an industry as dynamic and challenging as advertising film production, only the resilient prevail. Today, the stakes are higher than ever with Holding Companies and brands building in-house production capabilities.</p>
         <p><strong>Why Us?</strong> At Production Survivor, we specialize in transforming adversity into opportunity. We provide tailored strategies and insider knowledge to help your business not just survive, but thrive. Whether you're battling shrinking budgets, rising competition, or the need to scale swiftly, our expert guidance is your resource.</p>
         <p><strong>Take our simple quiz to see if you have what it takes to survive.</strong></p>
-        <a href="https://form.typeform.com/to/vrKyAv6L" class="cta-button">Take the Quiz</a>
         
-        <iframe src="https://form.typeform.com/to/vrKyAv6L" width="100%" height="600px" frameborder="0"></iframe>
-        
-        <div id="schedule-meeting" style="display: none;">
-            <p>We noticed some areas for improvement. Let's discuss further:</p>
-            <a href="https://calendly.com/hello-productionsurvivor" class="cta-button">Schedule a Meeting</a>
+        <button class="cta-button" id="start-quiz">Take the Quiz</button>
+
+        <div id="quiz-container">
+            <iframe src="https://form.typeform.com/to/vrKyAv6L" width="100%" height="600px" frameborder="0"></iframe>
         </div>
     </div>
+
+    <script>
+        document.getElementById("start-quiz").addEventListener("click", function() {
+            document.getElementById("quiz-container").style.display = "block";
+            document.getElementById("start-quiz").style.display = "none"; // Hide button after click
+        });
+    </script>
 </body>
 </html>
